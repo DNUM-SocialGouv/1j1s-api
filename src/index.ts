@@ -1,7 +1,6 @@
 import Http from 'http'
-import { servicesVersion } from 'typescript'
 
-export function createServer(){
+export function createServer(port = 8080) {
     const server = Http.createServer((req, res) => {
         res.statusCode = 202
         res.write('Bonjour')
@@ -11,7 +10,7 @@ export function createServer(){
     async function start() {
         return new Promise<void>((ok, ko) => {
             // @ts-ignore
-            server.listen(8888, (error) => error ? ko(error) : ok())
+            server.listen(port, (error) => error ? ko(error) : ok())
         })
     }
 

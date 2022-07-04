@@ -1,9 +1,10 @@
-import { expect } from 'chai'
 import { createServer } from '../src/'
 import supertest from 'supertest'
 
 describe('API', () => {
-    const server = createServer()
+    const port = 8811
+    const server = createServer(8811)
+    const URL = `http://localhost:${port}`
     before(async () => {
         console.log("Au début")
         await server.start()
@@ -13,19 +14,15 @@ describe('API', () => {
         await server.stop()
     })
     it('répond Bonjour quand on appelle GET /', async () => {
-        // GIVEN
-        
         // WHEN
-        await supertest("http://localhost:8888")
+        await supertest(URL)
             .get("/")
         // THEN
             .expect("Bonjour")
     })
     it('répond un code 202 quand on appelle GET /', async () => {
-        // GIVEN
-        
         // WHEN
-        await supertest("http://localhost:8888")
+        await supertest(URL)
             .get("/")
         // THEN
             .expect(202)

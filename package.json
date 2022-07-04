@@ -1,0 +1,19 @@
+{
+  "name": "1j1s-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "mocha 'test/**/*.ts'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DNUM-SocialGouv/1j1s-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DNUM-SocialGouv/1j1s-api/issues"
+  },
+  "homepage": "https://github.com/DNUM-SocialGouv/1j1s-api#readme"
+}

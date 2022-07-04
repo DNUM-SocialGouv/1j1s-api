@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "test": "mocha 'test/**/*.ts'"
+    "test": "mocha -r ts-node/register 'test/**/*.ts'"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/DNUM-SocialGouv/1j1s-api/issues"
   },
-  "homepage": "https://github.com/DNUM-SocialGouv/1j1s-api#readme"
+  "homepage": "https://github.com/DNUM-SocialGouv/1j1s-api#readme",
+  "dependencies": {
+    "@types/chai": "^4.3.1",
+    "@types/mocha": "^9.1.1",
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0",
+    "ts-node": "^10.8.2",
+    "typescript": "^4.7.4"
+  }
 }

@@ -1,10 +1,13 @@
-import { createServer } from "../index"
+import { createServer } from '../index'
+
+/* eslint-disable no-console, no-process-env */
 
 const port = process.env.PORT ? Number(process.env.PORT) : 8080
 const server = createServer(port)
+
 server.start().then(() => {
-    console.log(`Serveur démarré sur le port ${port}`)
+	console.log(`Serveur démarré sur le port ${port}`)
 }).catch((error) => {
-    console.error("Serveur n'a pas démarré", error)
-    process.exit(1)
+	console.error("Serveur n'a pas démarré", error)
+	process.exit(1)
 })

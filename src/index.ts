@@ -1,28 +1,22 @@
 import Http from 'http'
+import Koa from 'koa'
+import Router from 'koa-router'
+import * as util from "util";
 
 export function createServer(port = 8080) {
-    const server = Http.createServer((req, res) => {
-        if (req.url === "/") {
-            res.statusCode = 202
-            return res.end('Bonjour')
-        }
+    const app = new Koa()
+    const router = new Router()
+    const server = Http.createServer(app.callback())
 
-        res.statusCode = 404
-        return res.end()
+    app.use(router.routes())
+
+    router.get("/", (ctx) => {
+        ctx.body = "Bonjour"
+        ctx.status = 202
     })
 
-    async function start() {
-        return new Promise<void>((ok, ko) => {
-            // @ts-ignore
-            server.listen(port, (error) => error ? ko(error) : ok())
-        })
+    return {
+        start: util.promisify(server.listen.bind(server, port)),
+        stop: util.promisify(server.close.bind(server))
     }
-
-    async function stop() {
-        return new Promise<void>((ok, ko) => {
-            server.close((error) => error ? ko(error) : ok())
-        })
-    }
-
-    return {start, stop}
 }

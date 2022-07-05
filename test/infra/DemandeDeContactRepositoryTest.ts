@@ -1,5 +1,6 @@
 import { expect } from 'chai'
-import { DemandeDeContact, DemandeDeContactRepository } from '../../src/infra/DemandeDeContactRepository'
+import { DemandeDeContactRepository } from '../../src/infra/DemandeDeContactRepository'
+import { DemandeDeContact } from '../../src/domain/model/DemandeDeContact'
 
 describe('DemandeDeContactRepository', () => {
 	const id = '555'

@@ -1,6 +1,4 @@
-export interface DemandeDeContact {
-	readonly id: string
-}
+import { DemandeDeContact } from '../domain/model/DemandeDeContact'
 
 export class DemandeDeContactRepository {
 	private store: Map<string, DemandeDeContact> = new Map()

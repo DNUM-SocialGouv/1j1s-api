@@ -3,7 +3,7 @@ import supertest from 'supertest'
 
 describe('API', () => {
     const port = 8811
-    const server = createServer(8811)
+    const server = createServer(8811, false)
     const URL = `http://localhost:${port}`
     before(() => server.start())
     after(() => server.stop())

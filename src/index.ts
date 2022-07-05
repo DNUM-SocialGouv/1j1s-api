@@ -2,9 +2,13 @@ import Http from 'http'
 
 export function createServer(port = 8080) {
     const server = Http.createServer((req, res) => {
-        res.statusCode = 202
-        res.write('Bonjour')
-        res.end()
+        if (req.url === "/") {
+            res.statusCode = 202
+            return res.end('Bonjour')
+        }
+
+        res.statusCode = 404
+        return res.end()
     })
 
     async function start() {
@@ -20,5 +24,5 @@ export function createServer(port = 8080) {
         })
     }
 
-    return { start, stop }
+    return {start, stop}
 }

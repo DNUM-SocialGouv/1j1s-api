@@ -28,4 +28,12 @@ describe('API', () => {
             .expect(202)
 
     })
+    it('répond un code 404 quand on appelle GET /toma', async () => {
+        // WHEN
+        await supertest(URL)
+            .get("/toma")
+            // THEN
+            .expect(404)
+
+    })
 })

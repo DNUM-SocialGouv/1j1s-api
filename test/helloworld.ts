@@ -11,21 +11,21 @@ describe('API', () => {
 		// WHEN
 		await supertest(URL)
 			.get('/')
-		// THEN
+			// THEN
 			.expect('Bonjour')
 	})
 	it('répond un code 202 quand on appelle GET /', async () => {
 		// WHEN
 		await supertest(URL)
 			.get('/')
-		// THEN
+			// THEN
 			.expect(202)
 	})
 	it('répond un code 404 quand on appelle GET /toma', async () => {
 		// WHEN
 		await supertest(URL)
 			.get('/toma')
-		// THEN
+			// THEN
 			.expect(404)
 	})
 })

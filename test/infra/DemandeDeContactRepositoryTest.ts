@@ -13,8 +13,8 @@ describe('DemandeDeContactRepository', () => {
 		repository = new DemandeDeContactRepository()
 	})
 
-	context("Quand y'a pas de données dans le dépôt", () => {
-		describe("et qu'on fait .get(id)", () => {
+	context('Quand y\'a pas de données dans le dépôt', () => {
+		describe('et qu\'on fait .get(id)', () => {
 			it('ça résoud undefined', async () => {
 				// When
 				const actual = await repository.get(id)
@@ -24,7 +24,7 @@ describe('DemandeDeContactRepository', () => {
 			})
 		})
 
-		describe("et qu'on fait .save(demandeDeContact)", () => {
+		describe('et qu\'on fait .save(demandeDeContact)', () => {
 			it('ça résoud sans erreur', async () => {
 				// When
 				await repository.save(demandeDeContact())
@@ -38,7 +38,7 @@ describe('DemandeDeContactRepository', () => {
 				expect(actual).to.be.true
 			})
 
-			describe("et qu'on refait .get(id)", () => {
+			describe('et qu\'on refait .get(id)', () => {
 				it('ça résoud la demande de contact', async () => {
 					// Given
 					await repository.save(demandeDeContact())

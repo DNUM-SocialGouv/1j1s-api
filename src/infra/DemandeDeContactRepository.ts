@@ -1,6 +1,6 @@
 export interface DemandeDeContact {
 
-    readonly id: string
+	readonly id: string
 }
 
 export class DemandeDeContactRepository {

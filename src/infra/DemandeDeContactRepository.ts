@@ -1,5 +1,4 @@
 export interface DemandeDeContact {
-
 	readonly id: string
 }
 
@@ -11,8 +10,8 @@ export class DemandeDeContactRepository {
 	}
 
 	async save (demandeDeContact: DemandeDeContact): Promise<boolean> {
+		const created = !this.store.has(demandeDeContact.id)
 		this.store.set(demandeDeContact.id, demandeDeContact)
-
-		return true
+		return created
 	}
 }

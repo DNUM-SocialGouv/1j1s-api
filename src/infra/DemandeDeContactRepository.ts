@@ -1,6 +1,7 @@
 import { DemandeDeContact } from '../domain/model/DemandeDeContact'
+import { DemandeDeContactRepository } from '../domain/repository/DemandeDeContactRepository'
 
-export class DemandeDeContactRepository {
+export class InMemoryDemandeDeContactRepository implements DemandeDeContactRepository {
 	private store: Map<string, DemandeDeContact> = new Map()
 
 	async get (id: string): Promise<DemandeDeContact | undefined> {

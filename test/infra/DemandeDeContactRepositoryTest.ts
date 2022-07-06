@@ -1,8 +1,9 @@
 import { expect } from 'chai'
-import { DemandeDeContactRepository } from '../../src/infra/DemandeDeContactRepository'
+import { DemandeDeContactRepository } from '../../src/domain/repository/DemandeDeContactRepository'
+import { InMemoryDemandeDeContactRepository } from '../../src/infra/DemandeDeContactRepository'
 import { DemandeDeContact } from '../../src/domain/model/DemandeDeContact'
 
-describe('DemandeDeContactRepository', () => {
+describe('InMemoryDemandeDeContactRepository', () => {
 	const id = '555'
 	let repository: DemandeDeContactRepository
 
@@ -11,7 +12,7 @@ describe('DemandeDeContactRepository', () => {
 	}
 
 	beforeEach(() => {
-		repository = new DemandeDeContactRepository()
+		repository = new InMemoryDemandeDeContactRepository()
 	})
 
 	context('Quand y\'a pas de données dans le dépôt', () => {

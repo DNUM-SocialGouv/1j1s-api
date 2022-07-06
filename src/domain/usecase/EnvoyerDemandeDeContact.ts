@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid'
 import { DemandeDeContact } from '../model/DemandeDeContact'
-import { DemandeDeContactRepository } from '../../infra/DemandeDeContactRepository'
+import { DemandeDeContactRepository } from '../repository/DemandeDeContactRepository'
 
 export class EnvoyerDemandeDeContact {
   constructor (private readonly repository: DemandeDeContactRepository) { }

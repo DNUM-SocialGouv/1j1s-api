@@ -3,11 +3,7 @@ import { DemandeDeContact } from '../model/DemandeDeContact'
 import { DemandeDeContactRepository } from '../../infra/DemandeDeContactRepository'
 
 export class EnvoyerDemandeDeContact {
-  private readonly repository: DemandeDeContactRepository
-
-  constructor (repository: DemandeDeContactRepository) {
-    this.repository = repository
-  }
+  constructor (private readonly repository: DemandeDeContactRepository) { }
 
 	public async execute () : Promise<string> {
     const demande: DemandeDeContact = { id: uuidv4() }

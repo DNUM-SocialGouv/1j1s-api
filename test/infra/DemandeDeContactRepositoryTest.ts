@@ -26,11 +26,6 @@ describe('DemandeDeContactRepository', () => {
 		})
 
 		describe('et qu\'on fait .save(demandeDeContact)', () => {
-			it('ça résoud sans erreur', async () => {
-				// When
-				await repository.save(demandeDeContact())
-			})
-
 			it('ça résoud true', async () => {
 				// When
 				const actual = await repository.save(demandeDeContact())

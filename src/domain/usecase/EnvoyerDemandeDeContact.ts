@@ -3,11 +3,12 @@ import { DemandeDeContact } from '../model/DemandeDeContact'
 import { DemandeDeContactRepository } from '../repository/DemandeDeContactRepository'
 
 export class EnvoyerDemandeDeContact {
-  constructor (private readonly repository: DemandeDeContactRepository) { }
+	// eslint-disable-next-line no-useless-constructor
+	constructor (private readonly repository: DemandeDeContactRepository) { }
 
 	public async execute () : Promise<string> {
-    const demande: DemandeDeContact = { id: uuidv4() }
-    await this.repository.save(demande)
-    return demande.id
+		const demande: DemandeDeContact = { id: uuidv4() }
+		await this.repository.save(demande)
+		return demande.id
 	}
 }

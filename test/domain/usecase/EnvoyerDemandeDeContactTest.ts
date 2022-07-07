@@ -6,12 +6,12 @@ chai.use(ChaiUuid)
 const expect = chai.expect
 
 describe('EnvoyerDemandeDeContact', () => {
-  let repository: InMemoryDemandeDeContactRepository
-  let envoyerDemandeDeContact: EnvoyerDemandeDeContact
-  beforeEach(() => {
-      repository = new InMemoryDemandeDeContactRepository()
-			envoyerDemandeDeContact = new EnvoyerDemandeDeContact(repository)
-  })
+	let repository: InMemoryDemandeDeContactRepository
+	let envoyerDemandeDeContact: EnvoyerDemandeDeContact
+	beforeEach(() => {
+		repository = new InMemoryDemandeDeContactRepository()
+		envoyerDemandeDeContact = new EnvoyerDemandeDeContact(repository)
+	})
 	describe('.execute()', () => {
 		it('résoud un uuid', async () => {
 			// When
@@ -20,12 +20,12 @@ describe('EnvoyerDemandeDeContact', () => {
 			expect(actual).to.be.a.uuid('v4')
 		})
 
-    it('enregistre dans le dépôt à demande de contacts', async () => {
+		it('enregistre dans le dépôt à demande de contacts', async () => {
 			// When
 			const id = await envoyerDemandeDeContact.execute()
-      // Then
-      const saved = await repository.get(id)
-      expect(saved).to.deep.equal({ id })
-    })
+			// Then
+			const saved = await repository.get(id)
+			expect(saved).to.deep.equal({ id })
+		})
 	})
 })

@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import { DemandeDeContactRepository } from '../../src/domain/repository/DemandeDeContactRepository'
-import { InMemoryDemandeDeContactRepository } from '../../src/infra/DemandeDeContactRepository'
+import { InMemoryDemandeDeContactRepository } from '../../src/infra/InMemoryDemandeDeContactRepository'
 import { DemandeDeContact } from '../../src/domain/model/DemandeDeContact'
 
 describe('InMemoryDemandeDeContactRepository', () => {

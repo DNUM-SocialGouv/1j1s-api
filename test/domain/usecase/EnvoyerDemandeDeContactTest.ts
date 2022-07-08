@@ -1,5 +1,5 @@
 import { EnvoyerDemandeDeContact } from '../../../src/domain/usecase/EnvoyerDemandeDeContact'
-import { InMemoryDemandeDeContactRepository } from '../../../src/infra/DemandeDeContactRepository'
+import { InMemoryDemandeDeContactRepository } from '../../../src/infra/InMemoryDemandeDeContactRepository'
 import ChaiUuid from 'chai-uuid'
 import chai from 'chai'
 chai.use(ChaiUuid)
